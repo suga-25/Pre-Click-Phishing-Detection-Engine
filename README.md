@@ -296,4 +296,5 @@ Analyze -> Explain -> Warn -> Let the user decide
 ```
 ## Author
 
-**Suga**: https://github.com/suga-25
+**Suga**
+Github: https://github.com/suga-25
