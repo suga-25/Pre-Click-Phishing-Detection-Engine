@@ -97,6 +97,8 @@ flowchart TD
     H -->|Stay Safe| I[Cancel / Block Navigation]
     H -->|Proceed| J[Open Link]
 
+```
+
 ## Risk Classification
 
 | Score | Classification | Recommendation |
