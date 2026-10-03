@@ -60,44 +60,73 @@ Before opening a detected link, the dashboard allows the user to:
 
 ## System Architecture
 
+## System Architecture
+
 ```mermaid
 flowchart TD
 
-    A[Email / Message Context] --> B[URL Extraction]
+    A["📧 Email / Message Context"] --> B["🔗 URL Extraction"]
 
-    B --> C[Heuristic Analysis Engine]
+    B --> C["🧠 Heuristic Analysis Engine"]
 
-    C --> C1[Domain Analysis]
-    C --> C2[Brand Impersonation Analysis]
-    C --> C3[URL Structure Analysis]
-    C --> C4[Redirect / Shortener Analysis]
-    C --> C5[Page / Content Analysis]
-    C --> C6[Message Context Analysis]
+    C --> C1["🌐 Domain Analysis"]
+    C --> C2["🎭 Brand Impersonation"]
+    C --> C3["🔍 URL Structure"]
+    C --> C4["↪️ Redirect / Shortener Analysis"]
+    C --> C5["📄 Page / Content Analysis"]
+    C --> C6["💬 Message Context"]
 
-    C1 --> D[Risk Scoring Engine]
+    C1 --> D["⚙️ Risk Scoring Engine"]
     C2 --> D
     C3 --> D
     C4 --> D
     C5 --> D
     C6 --> D
 
-    D --> E[Risk Score 0 - 100]
+    D --> E["📊 Risk Score 0 - 100"]
 
-    E --> F[Explainable Result]
+    E --> F["💡 Explainable Result"]
 
-    F --> F1[Risk Classification]
-    F --> F2[Score Breakdown]
-    F --> F3[Key Risk Reasons]
-    F --> F4[Recommendation]
+    F --> F1["🏷️ Risk Classification"]
+    F --> F2["📈 Score Breakdown"]
+    F --> F3["⚠️ Key Risk Reasons"]
+    F --> F4["🛡️ Recommendation"]
 
-    F --> G[Pre-Click Protection]
+    F --> G["🚨 Pre-Click Protection"]
 
-    G --> H{User Decision}
+    G --> H{"👤 User Decision"}
 
-    H -->|Stay Safe| I[Cancel / Block Navigation]
-    H -->|Proceed| J[Open Link]
+    H -->|"🛡️ Stay Safe"| I["🚫 Cancel / Block Navigation"]
+    H -->|"➡️ Proceed"| J["🌍 Open Link"]
 
+
+    %% Node Styles
+    classDef input fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#111827;
+    classDef extraction fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#111827;
+    classDef engine fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111827;
+    classDef analysis fill:#ecfdf5,stroke:#059669,stroke-width:1.5px,color:#111827;
+    classDef scoring fill:#ffedd5,stroke:#ea580c,stroke-width:2px,color:#111827;
+    classDef explain fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#111827;
+    classDef protection fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#111827;
+    classDef decision fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#111827;
+    classDef safe fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111827;
+    classDef danger fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#111827;
+
+
+    %% Apply Styles
+    class A input;
+    class B extraction;
+    class C engine;
+    class C1,C2,C3,C4,C5,C6 analysis;
+    class D,E scoring;
+    class F,F1,F2,F3,F4 explain;
+    class G protection;
+    class H decision;
+    class I safe;
+    class J danger;
 ```
+
+## Risk Classification
 
 ## Risk Classification
 
