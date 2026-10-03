@@ -58,10 +58,6 @@ Before opening a detected link, the dashboard allows the user to:
 
 ## System Architecture
 
-## System Architecture
-
-## System Architecture
-
 ```mermaid
 flowchart TD
 
@@ -125,8 +121,6 @@ flowchart TD
     class I safe;
     class J danger;
 ```
-
-## Risk Classification
 
 ## Risk Classification
 
