@@ -61,65 +61,105 @@ Before opening a detected link, the dashboard allows the user to:
 ```mermaid
 flowchart TD
 
-    A["📧 Email / Message Context"] --> B["🔗 URL Extraction"]
+    A["Email / Message Context"] --> B["URL Extraction"]
+    B --> C["Pre-Click Analysis Engine"]
 
-    B --> C["🧠 Heuristic Analysis Engine"]
+    subgraph ANALYSIS["MULTI-SIGNAL SECURITY ANALYSIS"]
+        direction LR
 
-    C --> C1["🌐 Domain Analysis"]
-    C --> C2["🎭 Brand Impersonation"]
-    C --> C3["🔍 URL Structure"]
-    C --> C4["↪️ Redirect / Shortener Analysis"]
-    C --> C5["📄 Page / Content Analysis"]
-    C --> C6["💬 Message Context"]
+        C1["Domain Analysis"]
+        C2["Brand Impersonation"]
+        C3["URL Structure"]
+        C4["Redirect & Shortener Analysis"]
+        C5["Page & Content Analysis"]
+        C6["Message Context Analysis"]
+    end
 
-    C1 --> D["⚙️ Risk Scoring Engine"]
+    C --> C1
+    C --> C2
+    C --> C3
+    C --> C4
+    C --> C5
+    C --> C6
+
+    C1 --> D["Risk Scoring Engine"]
     C2 --> D
     C3 --> D
     C4 --> D
     C5 --> D
     C6 --> D
 
-    D --> E["📊 Risk Score 0 - 100"]
+    D --> E["Risk Score<br/>0 - 100"]
 
-    E --> F["💡 Explainable Result"]
+    E --> F["Explainable Security Assessment"]
 
-    F --> F1["🏷️ Risk Classification"]
-    F --> F2["📈 Score Breakdown"]
-    F --> F3["⚠️ Key Risk Reasons"]
-    F --> F4["🛡️ Recommendation"]
+    subgraph EXPLANATION["EXPLAINABILITY LAYER"]
+        direction LR
 
-    F --> G["🚨 Pre-Click Protection"]
+        F1["Risk Classification"]
+        F2["Score Breakdown"]
+        F3["Risk Factors"]
+        F4["Recommendation"]
+    end
 
-    G --> H{"👤 User Decision"}
+    F --> F1
+    F --> F2
+    F --> F3
+    F --> F4
 
-    H -->|"🛡️ Stay Safe"| I["🚫 Cancel / Block Navigation"]
-    H -->|"➡️ Proceed"| J["🌍 Open Link"]
+    F --> G["Pre-Click Protection"]
+    G --> H{"User Decision"}
 
-
-    %% Node Styles
-    classDef input fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#111827;
-    classDef extraction fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#111827;
-    classDef engine fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111827;
-    classDef analysis fill:#ecfdf5,stroke:#059669,stroke-width:1.5px,color:#111827;
-    classDef scoring fill:#ffedd5,stroke:#ea580c,stroke-width:2px,color:#111827;
-    classDef explain fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#111827;
-    classDef protection fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#111827;
-    classDef decision fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#111827;
-    classDef safe fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111827;
-    classDef danger fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#111827;
+    H -->|Stay Safe| I["Cancel Navigation"]
+    H -->|Proceed| J["Open Link"]
 
 
-    %% Apply Styles
+    %% Main flow colors
+    classDef input fill:#E8F1FF,stroke:#2563EB,stroke-width:2px,color:#172033;
+    classDef extraction fill:#F1EAFE,stroke:#7C3AED,stroke-width:2px,color:#172033;
+    classDef engine fill:#E6F7F0,stroke:#059669,stroke-width:3px,color:#172033;
+
+    %% Analysis colors
+    classDef analysis fill:#F0FDF4,stroke:#16A34A,stroke-width:1.5px,color:#172033;
+
+    %% Scoring colors
+    classDef scoring fill:#FFF4E5,stroke:#EA580C,stroke-width:2.5px,color:#172033;
+    classDef score fill:#FFF7ED,stroke:#F97316,stroke-width:3px,color:#172033;
+
+    %% Explanation colors
+    classDef explanation fill:#E8F7FF,stroke:#0284C7,stroke-width:2px,color:#172033;
+
+    %% Protection colors
+    classDef protection fill:#FFF0F0,stroke:#DC2626,stroke-width:2.5px,color:#172033;
+    classDef decision fill:#FFF8E1,stroke:#D97706,stroke-width:2px,color:#172033;
+
+    %% Final actions
+    classDef safe fill:#EAF8EE,stroke:#16A34A,stroke-width:2px,color:#172033;
+    classDef open fill:#FDECEC,stroke:#DC2626,stroke-width:2px,color:#172033;
+
+
+    %% Apply colors
     class A input;
     class B extraction;
     class C engine;
+
     class C1,C2,C3,C4,C5,C6 analysis;
-    class D,E scoring;
-    class F,F1,F2,F3,F4 explain;
+
+    class D scoring;
+    class E score;
+
+    class F,F1,F2,F3,F4 explanation;
+
     class G protection;
     class H decision;
+
     class I safe;
-    class J danger;
+    class J open;
+
+
+    %% Subgraph styling
+    style ANALYSIS fill:#F7FAFC,stroke:#16A34A,stroke-width:2px,color:#166534;
+    style EXPLANATION fill:#F7FAFC,stroke:#0284C7,stroke-width:2px,color:#075985;
 ```
 
 ## Risk Classification
