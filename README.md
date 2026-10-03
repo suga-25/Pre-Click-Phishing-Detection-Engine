@@ -241,7 +241,7 @@ Pre-Click-Phishing-Detection-Engine/
 
 ### Dashboard
 
-![Dashboard](screenshots/01-dashboard.png)
+Screenshots/Screenshots01-dashboard.png.png
 
 ### High-Risk Phishing Detection
 
