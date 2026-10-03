@@ -211,14 +211,6 @@ flowchart TD
     ROOT["Pre-Click-Phishing-Detection-Engine"]
 
     ROOT --> A["analyzer/"]
-    ROOT --> B["backend/"]
-    ROOT --> C["database/"]
-    ROOT --> D["frontend/"]
-    ROOT --> E["benchmark_results.json"]
-    ROOT --> F["benchmark_report.txt"]
-    ROOT --> G["requirements.txt"]
-    ROOT --> H["test_benchmark_edgecases.py"]
-
     A --> A1["brand_analyzer.py"]
     A --> A2["context_analyzer.py"]
     A --> A3["domain_analyzer.py"]
@@ -227,16 +219,24 @@ flowchart TD
     A --> A6["redirect_analyzer.py"]
     A --> A7["url_analyzer.py"]
 
+    ROOT --> B["backend/"]
     B --> B1["app.py"]
     B --> B2["extractor.py"]
     B --> B3["risk_engine.py"]
 
+    ROOT --> C["database/"]
     C --> C1["phishing.db"]
     C --> C2["schema.sql"]
 
+    ROOT --> D["frontend/"]
     D --> D1["index.html"]
     D --> D2["script.js"]
     D --> D3["style.css"]
+
+    ROOT --> E["benchmark_results.json"]
+    ROOT --> F["benchmark_report.txt"]
+    ROOT --> G["requirements.txt"]
+    ROOT --> H["test_benchmark_edgecases.py"]
 ```
 
 ## Screenshots
