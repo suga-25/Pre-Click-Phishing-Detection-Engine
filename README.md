@@ -241,19 +241,19 @@ Pre-Click-Phishing-Detection-Engine/
 
 ### Dashboard
 
-https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/e2b768797cde0996de9562474a0afb53a77f4d1d/Screenshots/Screenshots01-dashboard.png.png
+https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/main/Screenshots/01-dashboard.png
 
 ### High-Risk Phishing Detection
 
-https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/e2b768797cde0996de9562474a0afb53a77f4d1d/Screenshots/Screenshots02-high-risk-phishing.png.png
+https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/main/Screenshots/02-high-risk-phishing.png
 
 ### Multiple URL Analysis
 
-https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/e2b768797cde0996de9562474a0afb53a77f4d1d/Screenshots/Screenshots03-multiple-url-analysis.png.png
+https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/main/Screenshots/03-multiple-url-analysis.png
 
 ### Message With No URLs
 
-https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/e2b768797cde0996de9562474a0afb53a77f4d1d/Screenshots/Screenshots04-no-url-message.png.png
+https://github.com/suga-25/Pre-Click-Phishing-Detection-Engine/blob/main/Screenshots/04-no-url-message.png
 
 ## Running Locally
 
