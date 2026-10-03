@@ -1,0 +1,332 @@
+{
+  "summary": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "matrix": {
+    "CLEAN": {
+      "CLEAN": 10,
+      "SUSPICIOUS": 0,
+      "PHISHING": 0
+    },
+    "SUSPICIOUS": {
+      "CLEAN": 0,
+      "SUSPICIOUS": 1,
+      "PHISHING": 0
+    },
+    "PHISHING": {
+      "CLEAN": 0,
+      "SUSPICIOUS": 0,
+      "PHISHING": 14
+    }
+  },
+  "details": [
+    {
+      "id": 1,
+      "url": "https://github.com/login",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean major brand with login path",
+      "reasons": []
+    },
+    {
+      "id": 2,
+      "url": "https://accounts.google.com/ServiceLogin?service=mail",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean multi-subdomain + login query",
+      "reasons": []
+    },
+    {
+      "id": 3,
+      "url": "https://www.paypal.com/us/signin",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean financial portal",
+      "reasons": []
+    },
+    {
+      "id": 4,
+      "url": "https://bit.ly/3xXyZ1",
+      "truth": "SUSPICIOUS",
+      "predicted": "SUSPICIOUS",
+      "score": 35,
+      "result": "PASS (TP)",
+      "note": "Legitimate shortener usage (masking)",
+      "reasons": [
+        "URL utilizes a known shortening service that masks the real destination."
+      ]
+    },
+    {
+      "id": 5,
+      "url": "http://example.com/login.php",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Insecure HTTP on clean domain with login file",
+      "reasons": []
+    },
+    {
+      "id": 6,
+      "url": "https://marketing.hubspot.com/email/verify?token=12345",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Legitimate SaaS marketing automation link",
+      "reasons": []
+    },
+    {
+      "id": 7,
+      "url": "https://aws.amazon.com/console/billing/reports",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean enterprise cloud portal with subdomains",
+      "reasons": []
+    },
+    {
+      "id": 8,
+      "url": "https://medium.com/@user/how-to-secure-your-account-1234",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean blog post title containing security keywords",
+      "reasons": []
+    },
+    {
+      "id": 9,
+      "url": "https://zoom.us/j/9876543210?pwd=V1JpTXlSU0h2S1BWR",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean conference link with long query string",
+      "reasons": []
+    },
+    {
+      "id": 10,
+      "url": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean OAuth authorization endpoint",
+      "reasons": []
+    },
+    {
+      "id": 11,
+      "url": "https://docs.google.com/document/d/1A2B3C4D5E/edit?usp=sharing",
+      "truth": "CLEAN",
+      "predicted": "CLEAN",
+      "score": 0,
+      "result": "PASS (TN)",
+      "note": "Clean Google Docs file sharing link",
+      "reasons": []
+    },
+    {
+      "id": 12,
+      "url": "https://paypal.com.account-verification-service.top/login",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Brand in subdomain + suspicious TLD",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('paypal').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords.",
+        "Domain uses deep subdomain layering (2 sub-levels) on untrusted root."
+      ]
+    },
+    {
+      "id": 13,
+      "url": "http://192.168.1.1/admin/login.html",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Raw IP host targeting local device admin",
+      "reasons": [
+        "Raw IP address hosting explicit brand or credential target path.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://accounts-google-com.login-verify-security.xyz/auth",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Hyphenated brand spoofing in domain",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('google').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://login%20update%20billing.net/verify",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "URL Percent encoding evasion trick",
+      "reasons": [
+        "Hostname contains percent-encoded characters used to obfuscate domain identity.",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://drop-box-share-download.site/file/view",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Hyphenated brand variation + .site TLD",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('dropbox').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern."
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://wellsfargo-customer-verify.info/auth/login",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Brand keyword combination + .info TLD",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('wellsfargo').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://chase-bank-online-banking-portal.com/login",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Excessive hyphenation keyword stuffing",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('chase').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 19,
+      "url": "https://raw.githubusercontent.com/user/repo/main/login.html",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Phishing kit hosted on public code repository",
+      "reasons": [
+        "Public content platform (raw.githubusercontent.com) hosts explicit credential targets or executable payloads."
+      ]
+    },
+    {
+      "id": 20,
+      "url": "http://secure.login.update.bank.account.attacker.com/user",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 80,
+      "result": "PASS (TP)",
+      "note": "Deep subdomain chain obfuscation over HTTP",
+      "reasons": [
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords.",
+        "Domain uses deep subdomain layering (5 sub-levels) on untrusted root.",
+        "URL uses unencrypted HTTP communication."
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://appleid.apple.com.verify-identity-system.tech/login",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Exact brand string embedded as subdomain prefix",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('apple').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords.",
+        "Domain uses deep subdomain layering (3 sub-levels) on untrusted root."
+      ]
+    },
+    {
+      "id": 22,
+      "url": "https://tinyurl.com/bank-account-security-update",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 55,
+      "result": "PASS (TP)",
+      "note": "Shortened link targeting banking verification",
+      "reasons": [
+        "URL utilizes a known shortening service that masks the real destination.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://office365-login-microsoft.online/auth",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Legitimate product combo impersonation",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('microsoft').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 24,
+      "url": "https://netflix-account-renew-billing.tech/user/update",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Subscription scam domain pattern",
+      "reasons": [
+        "Domain uses high-risk lexical squatting / obfuscated brand impersonation ('netflix').",
+        "Domain utilizes a high-risk TLD or suspicious keyword pattern.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    },
+    {
+      "id": 25,
+      "url": "http://10.0.0.1/verify/paypal/account",
+      "truth": "PHISHING",
+      "predicted": "PHISHING",
+      "score": 100,
+      "result": "PASS (TP)",
+      "note": "Raw internal IP + brand path spoof",
+      "reasons": [
+        "Raw IP address hosting explicit brand or credential target path.",
+        "URL contains sensitive action or credential harvesting keywords."
+      ]
+    }
+  ]
+}

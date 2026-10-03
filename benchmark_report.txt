@@ -1,0 +1,53 @@
+﻿================================================================================
+RUNNING PHASE 5.2 / 5.3 STRESS BENCHMARK EVALUATION
+================================================================================
+[01/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://github.com/login
+[02/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://accounts.google.com/ServiceLogin
+[03/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://www.paypal.com/us/signin
+[04/25] Score:  35/100 | Truth: SUSPICIOUS | Pred: SUSPICIOUS | Result: PASS (TP) | https://bit.ly/3xXyZ1
+[05/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | http://example.com/login.php
+[06/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://marketing.hubspot.com/email/veri
+[07/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://aws.amazon.com/console/billing/r
+[08/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://medium.com/@user/how-to-secure-y
+[09/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://zoom.us/j/9876543210?pwd=V1JpTXl
+[10/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://login.microsoftonline.com/common
+[11/25] Score:   0/100 | Truth: CLEAN      | Pred: CLEAN      | Result: PASS (TN) | https://docs.google.com/document/d/1A2B3
+[12/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://paypal.com.account-verification-
+[13/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | http://192.168.1.1/admin/login.html
+[14/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://accounts-google-com.login-verify
+[15/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://login%20update%20billing.net/ver
+[16/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://drop-box-share-download.site/fil
+[17/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://wellsfargo-customer-verify.info/
+[18/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://chase-bank-online-banking-portal
+[19/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://raw.githubusercontent.com/user/r
+[20/25] Score:  80/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | http://secure.login.update.bank.account.
+[21/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://appleid.apple.com.verify-identit
+[22/25] Score:  55/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://tinyurl.com/bank-account-securit
+[23/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://office365-login-microsoft.online
+[24/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | https://netflix-account-renew-billing.te
+[25/25] Score: 100/100 | Truth: PHISHING   | Pred: PHISHING   | Result: PASS (TP) | http://10.0.0.1/verify/paypal/account
+
+================================================================================
+BINARY THREAT METRICS SUMMARY (Threat vs. Non-Threat)
+================================================================================
+True Positives  (TP) : 15 | False Positives (FP) :  0
+True Negatives  (TN) : 10 | False Negatives (FN) :  0
+--------------------------------------------------------------------------------
+Accuracy  : 100.00%
+Precision : 100.00%
+Recall    : 100.00%
+F1-Score  : 100.00%
+
+================================================================================
+3-CLASS CONFUSION MATRIX (Row = Ground Truth, Column = Predicted)
+================================================================================
+Actual \ Pred   | CLEAN      | SUSPICIOUS | PHISHING  
+-------------------------------------------------------
+CLEAN           | 10         | 0          | 0         
+SUSPICIOUS      | 0          | 1          | 0         
+PHISHING        | 0          | 0          | 14        
+================================================================================
+
+[+] SUCCESS: All benchmark test cases passed perfectly!
+
+[+] Full results exported to 'benchmark_results.json'

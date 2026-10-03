@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Click Phishing Detection Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Pre-Click Phishing Detection Engine</h1>
+        <p class="subtitle">Real-Time Contextual Analysis & Threat Explainability Dashboard</p>
+    </header>
+
+    <main class="dashboard-grid">
+        <!-- Panel 1: Inbox List (Gmail-Style Layout) -->
+        <section class="card" id="inbox-panel">
+            <div class="panel-header">
+                <h2>Inbox</h2>
+                <span class="inbox-count-badge" id="inbox-count">3 Messages</span>
+            </div>
+            <div id="inbox-list" class="inbox-container">
+                <p class="placeholder">Loading inbox messages...</p>
+            </div>
+        </section>
+
+        <!-- Panel 2: Realistic Email Message Viewer -->
+        <section class="card" id="message-viewer">
+            <div class="panel-header">
+                <h2>Message Viewer</h2>
+            </div>
+            <div id="message-content" class="message-container">
+                <p class="placeholder">Select a message from the inbox to open it and trigger pre-click detection.</p>
+            </div>
+        </section>
+
+        <!-- Panel 3: Pre-Click URL Analysis Output (Untouched Structure) -->
+        <section class="card" id="url-detector-output">
+            <div class="panel-header">
+                <h2>Pre-Click Link Inspector & Explainability</h2>
+            </div>
+            <div id="analysis-results" class="analysis-container">
+                <p class="placeholder">Select an email to analyze embedded URLs.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
