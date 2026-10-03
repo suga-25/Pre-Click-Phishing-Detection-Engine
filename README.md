@@ -205,38 +205,36 @@ These results describe performance on the curated benchmark set and should not b
 
 ## Project Structure
 
-```mermaid
-flowchart TD
-
-    ROOT["Pre-Click-Phishing-Detection-Engine"]
-
-    ROOT --> A["analyzer/"]
-    A --> A1["brand_analyzer.py"]
-    A --> A2["context_analyzer.py"]
-    A --> A3["domain_analyzer.py"]
-    A --> A4["engine.py"]
-    A --> A5["page_analyzer.py"]
-    A --> A6["redirect_analyzer.py"]
-    A --> A7["url_analyzer.py"]
-
-    ROOT --> B["backend/"]
-    B --> B1["app.py"]
-    B --> B2["extractor.py"]
-    B --> B3["risk_engine.py"]
-
-    ROOT --> C["database/"]
-    C --> C1["phishing.db"]
-    C --> C2["schema.sql"]
-
-    ROOT --> D["frontend/"]
-    D --> D1["index.html"]
-    D --> D2["script.js"]
-    D --> D3["style.css"]
-
-    ROOT --> E["benchmark_results.json"]
-    ROOT --> F["benchmark_report.txt"]
-    ROOT --> G["requirements.txt"]
-    ROOT --> H["test_benchmark_edgecases.py"]
+```text
+Pre-Click-Phishing-Detection-Engine/
+│
+├── analyzer/
+│   ├── brand_analyzer.py
+│   ├── context_analyzer.py
+│   ├── domain_analyzer.py
+│   ├── engine.py
+│   ├── page_analyzer.py
+│   ├── redirect_analyzer.py
+│   └── url_analyzer.py
+│
+├── backend/
+│   ├── app.py
+│   ├── extractor.py
+│   └── risk_engine.py
+│
+├── database/
+│   ├── phishing.db
+│   └── schema.sql
+│
+├── frontend/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── benchmark_results.json
+├── benchmark_report.txt
+├── requirements.txt
+└── test_benchmark_edgecases.py
 ```
 
 ## Screenshots
@@ -296,7 +294,3 @@ The project focuses on explainable pre-click phishing protection rather than sim
 ```text
 Analyze -> Explain -> Warn -> Let the user decide
 ```
-
-## Disclaimer
-
-This project is an educational and research-oriented phishing analysis system. Its heuristic results are not a substitute for commercial security products, threat-intelligence services, browser security systems, or professional incident-response processes.
