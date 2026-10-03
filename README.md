@@ -58,36 +58,44 @@ Before opening a detected link, the dashboard allows the user to:
 
 ## System Architecture
 
-```text
-Email / Message Context
-          |
-          v
-     URL Extraction
-          |
-          v
-  Heuristic Analysis Engine
-          |
-          +-- Domain analysis
-          +-- Brand impersonation
-          +-- URL structure
-          +-- Redirect/shortener indicators
-          +-- Page/context indicators
-          +-- Message context
-          |
-          v
-    Risk Score 0-100
-          |
-          v
- Explainable Result
-          |
-          +-- Score
-          +-- Classification
-          +-- Reasons
-          +-- Recommendation
-          |
-          v
-   Pre-Click Dashboard
-```
+## System Architecture
+
+```mermaid
+flowchart TD
+
+    A[Email / Message Context] --> B[URL Extraction]
+
+    B --> C[Heuristic Analysis Engine]
+
+    C --> C1[Domain Analysis]
+    C --> C2[Brand Impersonation Analysis]
+    C --> C3[URL Structure Analysis]
+    C --> C4[Redirect / Shortener Analysis]
+    C --> C5[Page / Content Analysis]
+    C --> C6[Message Context Analysis]
+
+    C1 --> D[Risk Scoring Engine]
+    C2 --> D
+    C3 --> D
+    C4 --> D
+    C5 --> D
+    C6 --> D
+
+    D --> E[Risk Score 0 - 100]
+
+    E --> F[Explainable Result]
+
+    F --> F1[Risk Classification]
+    F --> F2[Score Breakdown]
+    F --> F3[Key Risk Reasons]
+    F --> F4[Recommendation]
+
+    F --> G[Pre-Click Protection]
+
+    G --> H{User Decision}
+
+    H -->|Stay Safe| I[Cancel / Block Navigation]
+    H -->|Proceed| J[Open Link]
 
 ## Risk Classification
 
