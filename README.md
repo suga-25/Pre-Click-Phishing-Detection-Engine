@@ -47,7 +47,9 @@ URL signals can be combined with message context such as:
 
 The dashboard shows the reasoning behind a result:
 
+```bash
 Risk Score -> Classification -> Score Breakdown -> Key Risk Reasons -> Recommendation
+```
 
 ### Pre-Click Protection
 
