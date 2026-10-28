@@ -293,9 +293,16 @@ gunicorn backend.app:app
 
 The project focuses on explainable pre-click phishing protection rather than simply returning a binary phishing/legitimate label.
 
-```text
-Analyze -> Explain -> Warn -> Let the user decide
-```
+graph LR
+    A[Analyze<br><i>Examine data & context</i>] --> B[Explain<br><i>Break down findings clearly</i>]
+    B --> C[Warn<br><i>Identify risks & trade-offs</i>]
+    C --> D[Let the User Decide<br><i>Present options & empower choice</i>]
+
+    style A fill:#f4f6f8,stroke:#333,stroke-width:1px
+    style B fill:#eef2f7,stroke:#333,stroke-width:1px
+    style C fill:#fff3e0,stroke:#f57c00,stroke-width:1px
+    style D fill:#e8f5e9,stroke:#388e3c,stroke-width:1px
+    
 ## Author
 
 **Suga**  
